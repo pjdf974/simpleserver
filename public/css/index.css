@@ -1,15 +1,20 @@
-.input-section{
+.presentation-section{
 	background-color: #ABCD00;
 	margin: 10px;
+	text-align: center;
+	border: 1px solid #ABCE111;
 }
 .visu-section{
-	background-color: #CDEF00;
+	width: 808px;	
+	margin:	auto;
+	background-color: #BBF67F;
 	border: 1px solid #00EF00;
-	margin: 10px;
 }
 h1{
 	color: red;
+	text-align: center;
 }
 h5{
+	text-align: center;
 	color: blue;
 }

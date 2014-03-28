@@ -8,26 +8,17 @@ var IP = process.env.OPENSHIFT_NODEJS_IP;
 var PORT = process.env.OPENSHIFT_NODEJS_PORT;
 
 http.createServer(function(request, response){
-	//console.log(request.url);
-	var parsed = url.parse(request.url, true);
+	var parsed = url.parse(request.url);
 	if(request.url === "/") parsed.pathname = "index.html";
-	switch(parsed.pathname){
-		case "/save":
-			response.writeHead(200, mimes.plain);
-			response.end(parsed.query.num+" | "+parsed.query.dte+" | "+parsed.query.lib+" | "+parsed.query.mnt);
-			break;
-		default:
-			fs.createReadStream(path.join(__dirname, "public", parsed.pathname))
-				.on("open", function(){
-					response.writeHead(200, mimes[path.extname(parsed.pathname)]);
-					this.pipe(response);
-				})
-				.on("error", function(error){
-					response.writeHead(404, mimes.plain);
-					response.end("ERREUR 404 = "+error);
-				});
-			break;
-	};
+	fs.createReadStream(path.join(__dirname, "public", parsed.pathname))
+		.on("open", function(){
+			response.writeHead(200, mimes[path.extname(parsed.pathname)]);
+			this.pipe(response);
+		})
+		.on("error", function(error){
+			response.writeHead(307, {"location":"error.html"});
+			response.end();
+		});
 }).listen(PORT || 12345, IP || "localhost", function(){
 	//console.log("Server listen...");
 });
