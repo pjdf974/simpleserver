@@ -12,9 +12,9 @@ http.createServer(function(request, response){
 	var parsed = url.parse(request.url, true);
 	if(request.url === "/") parsed.pathname = "index.html";
 	switch(parsed.pathname){
-		case "/action":
+		case "/save":
 			response.writeHead(200, mimes.plain);
-			response.end("REPONSE SU SERVEUR = "+parsed.query.formNom+" a "+parsed.query.formAge+" ans!!!");
+			response.end(parsed.query.num+" | "+parsed.query.dte+" | "+parsed.query.lib+" | "+parsed.query.mnt);
 			break;
 		default:
 			fs.createReadStream(path.join(__dirname, "public", parsed.pathname))

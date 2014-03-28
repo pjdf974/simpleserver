@@ -1,0 +1,15 @@
+.input-section{
+	background-color: #ABCD00;
+	margin: 10px;
+}
+.visu-section{
+	background-color: #CDEF00;
+	border: 1px solid #00EF00;
+	margin: 10px;
+}
+h1{
+	color: red;
+}
+h5{
+	color: blue;
+}

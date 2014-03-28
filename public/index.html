@@ -3,16 +3,26 @@
 <head>
 	<meta charset="utf8"/>
 	<title>TEST</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	<h1>SALUT A TOUS</h1>
-	<h3>Site de test - Créer par pjdf974 - Ecrit en node.js pour Open Shift</h3>
-	<form action="/action" method="get">
+	<h1>TEST COMPTA ETUDE</h1>
+	<section class="input-section">		
 		<table>
-			<tr><td>NOM</td><td><input type="text" name="formNom"/></td></tr>
-			<tr><td>AGE</td><td><input type="text" name="formAge"/></td></tr>
+			<tr><td>Numéro</td><td><input type="text" id="txtNum" size="5" maxlength="5"/></td></tr>
+			<tr><td>Date</td><td><input type="text" id="txtDte" size="10" maxlength="10"/></td></tr>
+			<tr><td>Libellé</td><td><input type="text" id="txtLib" size="25" maxlength="25"/></td></tr>
+			<tr><td>Montant</td><td><input type="text" id="txtMnt" size="13" maxlength="13"/></td></tr>
 		</table>
-		<input type="submit" value="Valider"/>
-	</form>
+		<input type="button" value="Enregistrer" id="btnSave"/>		
+	</section>
+	<section class="visu-section">
+		<select id="slt" size="10"></select>
+		<input type="button" value="Tout effacer" id="btnClear"/>
+	</section>
+	<footer>
+		<h5>Site test - pjdf974 - node.js - Open Shift - GitHub - Ecrit le 28/03/2014 à Bois de Nèfles Sainte Clotilde - Ile de la Réunion</h5>
+	</footer>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
