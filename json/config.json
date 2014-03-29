@@ -1,0 +1,11 @@
+{
+	"index":"index.html",
+	"static":"public",
+	"localport":12345,
+	"localhost":"localhost",
+	"error":"error.html",
+	"dirbase":"datas",
+	"motdepasse":"papa",
+	"login":"papa",
+	"namebase":"requesturldatabase"
+}

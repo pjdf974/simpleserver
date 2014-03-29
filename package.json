@@ -7,13 +7,16 @@
     "test": "echo \"Error: aucun test defini\" && exit 1",
     "start":"node server.js"
   },
+  "dependencies": {
+    "nedb": "~0.10.4"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pjdf974/simpleserver.git"
   },
   "keywords": [
     "sac à puce", "sacàpuces", "pjdf", "pjdf974", "sac à puces"
-    "sacapuce", "sacapuces", "sacàpuce", "sap"
+    "sacapuce", "sacapuces", "sacàpuce", "sap", "chat"
   ],
   "author": "pjdf974",
   "license": "N/C",

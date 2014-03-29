@@ -5,12 +5,24 @@
 	<title>ChatSacAPuces</title>
 </head>
 <body>
+	<h1>Site du chat 'Sac à puces'</h1>
+	<div class="secure-acces">
+		<input type="text" id="txtLogin"/>
+		<input type="password" id="txtMotdepasse"/>
+		<input type="text" id="txtCommande"/>
+		<input type="button" value="Envoyer" id="btnSend"/>
+	</div>
+	<div class="visu">
+		<select id="slt" size="10"></select>
+	</div>
+	<a href="/">Revenir à la page d'acceuil</a><br/><br/>
 	<h1>Explication</h1>
 	Site 'test' ne servant strictement à rien.<br/><br/>
 	Créé pour l'apprentissage techno.web et Node.js<br/><br/>
 	Utilisation des ressources suivantes : <br/>
 	<ul>
 		<li>Modules 'http', 'fs', 'path' et 'url' de node.js</li>
+		<li>Module nedb.js pour le stockage des informations de connexions</li>
 		<li>Git Hub pour la gestion des versions</li>
 		<li>Open Shift pour l'hébergement</li>
 	</ul><br/>
@@ -24,9 +36,9 @@
 		<li>Dans GitHub, copier l'URL de l'application et la coller dans 'Source Code'</li>
 		<li>Puis 'Create application'</li>
 	</ul><br/><br/>
-	<a href="/">Revenir à la page d'acceuil</a><br/><br/>
 	<footer>
 		<h5>Site test - pjdf974 - 28/03/2014 - Bois de Nèfles Sainte Clotilde - Ile de la Réunion</h5>
 	</footer>
+	<script type="text/javascript" src="js/page.js"></script>
 </body>
 </html>
