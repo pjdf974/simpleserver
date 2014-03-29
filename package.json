@@ -1,10 +1,10 @@
 {
   "name": "simpleserver",
-  "version": "0.0.0",
-  "description": "simple server for open shift",
+  "version": "0.0.1",
+  "description": "test depliement sur open shift",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: aucun test defini\" && exit 1",
     "start":"node server.js"
   },
   "repository": {
@@ -12,7 +12,8 @@
     "url": "https://github.com/pjdf974/simpleserver.git"
   },
   "keywords": [
-    "httpserver"
+    "sac à puce", "sacàpuces", "pjdf", "pjdf974", "sac à puces"
+    "sacapuce", "sacapuces", "sacàpuce", "sap"
   ],
   "author": "pjdf974",
   "license": "N/C",
