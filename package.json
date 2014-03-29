@@ -1,14 +1,11 @@
 {
   "name": "simpleserver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "test depliement sur open shift",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: aucun test defini\" && exit 1",
     "start":"node server.js"
-  },
-  "dependencies": {
-    "nedb": "~0.10.4"
   },
   "repository": {
     "type": "git",
