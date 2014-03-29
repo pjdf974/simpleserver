@@ -2,7 +2,7 @@ onload = function(){
 	var xml = new XMLHttpRequest();
 
 	xml.onload = function(){
-		var result = xml.responseText.split("\n");
+		var result = xml.responseText.split("||");
 		for(var i=0, l=result.length; i<l; i++){
 			slt.add(new Option(result[i]));
 		};

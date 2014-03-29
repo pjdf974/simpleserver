@@ -2,39 +2,37 @@ var http   = require("http"),
     fs     = require("fs"),
     path   = require("path"),
     url    = require("url"),
-    Nedb   = require("nedb"),
     mimes  = require("./json/mimes"),
     config = require("./json/config");
 
 const IP   = process.env.OPENSHIFT_NODEJS_IP || config.localhost,
-      PORT = process.env.OPENSHIFT_NODEJS_PORT || config.localport;
-
-var db = new Nedb({filename:path.join(process.cwd(), config.dirbase, config.namebase), autoload:true});
+      PORT = process.env.OPENSHIFT_NODEJS_PORT || config.localport,
+      LOGF = path.join(process.cwd(), config.dirbase, config.namebase);
 
 http.createServer(function(request, response){
 	var parsed = url.parse(request.url, true);
 	if(request.url === "/") {
 		parsed.pathname = config.index;
-		db.insert({p:request.client.remotePort, a:request.client.remoteAddress, d:new Date()});
+		fs.appendFile(LOGF, request.client.remotePort+"|"+request.client.remoteAddress+"|"+new Date().toString().substring(0,25)+"||");
 	};
 	switch(parsed.pathname){
 		case "/getdatas":
 			if(parsed.query.motdepasse===config.motdepasse && parsed.query.login===config.login){
 				switch(parsed.query.commande){
 					case "all":
-						db.find({}, function(error, result){
-							var envoi = "";
-							for(var i=0, l=result.length; i<l; i++){
-								envoi += JSON.stringify(result[i])+"\n";
+						response.writeHead(200, mimes.plain);
+						fs.readFile(LOGF, function(error, datas){
+							if(error) response.end("ERREUR: "+error);
+							else{
+								response.end(datas);
 							};
-							response.writeHead(200, mimes.plain);
-							response.end(envoi);
 						});
 						break;
 					case "delete":
-						db.remove({}, {multi:true}, function(error, nbr){
-							response.writeHead(200, mimes.plain);
-							response.end("DELETE: "+nbr+" enregistrement(s) effacé(s). La base a été entièrement vidée...");
+						response.writeHead(200, mimes.plain);
+						fs.writeFile(LOGF, "", function(error){
+							if(error) response.end("ERREUR: "+error);
+							else response.end("DELETE: tous les enregistrements ont été effacés");
 						});
 						break;
 					case "help":
